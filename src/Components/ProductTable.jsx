@@ -1,7 +1,12 @@
+import { useContext } from "react";
+
 import { ProductCategoryRow } from "./ProductCategoryRow";
 import { ProductRow } from "./ProductRow";
+import { DataContext } from "../DataContext";
 
-export function ProductTable({ products, filterText, inStockOnly }) {
+export function ProductTable({ filterText, inStockOnly }) {
+
+    const products = useContext(DataContext);
     const rows = [];
     let lastCategory = null;
   
